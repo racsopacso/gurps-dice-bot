@@ -97,6 +97,7 @@ async def update_from_sheet_func(interaction: discord.Interaction, google_sheets
 
 @client.tree.command()
 async def update_from_sheet(interaction: discord.Interaction, google_sheets_id: str):
+    """Updates from a google sheet. The argument should be the sheet id - in the url, it's the stuff between /d/ and /edit"""
     if interaction.user.id not in playerdict:
         await interaction.response.send_message("Unrecognised user", ephemeral=True)
 
