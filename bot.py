@@ -154,7 +154,7 @@ async def modify_skill(interaction: discord.Interaction, skill_name: str, skill_
 
         player_obj.add_skill(new_skill)
 
-    await interaction.response.send_message("Succesfully added skill")
+    await interaction.response.send_message("Succesfully added skill", ephemeral=True)
 
 @client.tree.command()
 async def list_skills(interaction: discord.Interaction, skill_name: str | None = None):
