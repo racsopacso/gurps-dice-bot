@@ -131,6 +131,7 @@ async def register(interaction: discord.Interaction, google_sheets_id: str | Non
 
 @client.tree.command()
 async def modify_skill(interaction: discord.Interaction, skill_name: str, skill_level: int):
+    """Give skill name and level to modify or add a new skill"""
     skill_name = skill_name.lower()
 
     if interaction.user.id not in playerdict:
@@ -158,6 +159,7 @@ async def modify_skill(interaction: discord.Interaction, skill_name: str, skill_
 
 @client.tree.command()
 async def list_skills(interaction: discord.Interaction, skill_name: str | None = None):
+    """List all your skills. Give an arument to look up a skill, or leave blank to show all."""
     async with playerdict[interaction.user.id] as player_obj:
         if skill_name is not None:
             skill_name = to_comp_name(skill_name)
@@ -173,6 +175,7 @@ async def list_skills(interaction: discord.Interaction, skill_name: str | None =
 
 @client.tree.command()
 async def roll(interaction: discord.Interaction, skill_name: str):
+    """Roll a skill by name"""
     skill_name = skill_name.lower()
 
     if interaction.user.id not in playerdict:
@@ -190,6 +193,7 @@ async def roll(interaction: discord.Interaction, skill_name: str):
 
 @client.tree.command()
 async def delete_skill(interaction: discord.Interaction, skill_name: str):
+    """Delete a skill by name"""
     skill_name = skill_name.lower()
 
     if interaction.user.id not in playerdict:
