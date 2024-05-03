@@ -85,7 +85,7 @@ def get_sheet_for_user(spreadsheed_id: str):
     print(value)
 
     try:
-      if note_idx != None:
+      if note_idx != None and note_idx < len(value):
         note = note if (note := value[note_idx]) else None
       else:
         note = None
@@ -97,4 +97,5 @@ def get_sheet_for_user(spreadsheed_id: str):
 
 if __name__ == "__main__":
   foo = get_sheet_for_user("1dROo7t4H54WmJ40q2J-C9YfpX8nztmbal_ztu1XHSCg")
+  foo = get_sheet_for_user("1f-zlmNjaQyq1YiOUCs0Wzjifm2mZp6LKHtFZoooepag")
   breakpoint()
